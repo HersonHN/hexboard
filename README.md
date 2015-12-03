@@ -1,3 +1,3 @@
 # Hexboard
 
-An hexagonal board for canvas.
+A hexagonal board for canvas.
