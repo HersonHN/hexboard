@@ -332,7 +332,7 @@ Board.prototype.drawHilight = function (ctx) {
 };
 
 
-Board.prototype.selectCellsFromPoint = function (p, callback) {
+Board.prototype.selectCellFromPoint = function (p, callback) {
     var board = this;
     var x = (p.x - board.conf.horizontalOffset) / board.conf.distance;
     var y = (p.y - board.conf.verticalOffset)   / board.conf.distance;
@@ -355,11 +355,7 @@ Board.prototype.selectCellsFromPoint = function (p, callback) {
             break;
         }
 
-        board.beforeSelectCell(cell, board);
-        board.selectCell(cell, board);
-        board.afterSelectCell(cell, board);
-
-        break;
+        return cell;
 
     }
 };
