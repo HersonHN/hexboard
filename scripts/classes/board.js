@@ -356,7 +356,6 @@ Board.prototype.selectCellFromPoint = function (p, callback) {
         }
 
         return cell;
-
     }
 };
 
