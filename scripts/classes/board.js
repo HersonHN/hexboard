@@ -360,7 +360,6 @@ Board.prototype.selectCellFromPoint = function (p, callback) {
 };
 
 
-
 Board.prototype.selectCell = function (cell, board) {
     cell.selected = !cell.selected;
 };
@@ -371,17 +370,19 @@ Board.prototype.hoverCell = function (cell, board) {
 };
 
 
-
 Board.prototype.savePoints = function () {
     this.pointList.forEach(savePoints);
     this.cellList.forEach(savePoints);
 };
+
+
 function savePoints(point) {
     var saved = {
         x: point.x || 0,
         y: point.y || 0,
         z: point.z || 0
-    }
+    };
+    
     point.saved = saved;
 }
 
@@ -390,6 +391,8 @@ Board.prototype.loadPoints = function () {
     this.pointList.forEach(loadPoints);
     this.cellList.forEach(loadPoints);
 };
+
+
 function loadPoints(point) {
     if (!point.saved) return;
 
@@ -397,5 +400,6 @@ function loadPoints(point) {
     point.y = point.saved.y;
     point.z = point.saved.z;
 }
+
 
 module.exports = Board;
